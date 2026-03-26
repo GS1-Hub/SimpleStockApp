@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\AppDbContext.vb" />
+    <Compile Include="Models\Company.vb" />
     <Compile Include="Models\User.vb" />
     <Compile Include="Services\AuthService.vb" />
     <Compile Include="Views\Dashboard.Designer.vb">
@@ -124,6 +125,12 @@
     <Compile Include="Views\Register.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\SimpleStockMenu.Designer.vb">
+      <DependentUpon>SimpleStockMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SimpleStockMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Dashboard.resx">
@@ -141,6 +148,9 @@
     <EmbeddedResource Include="Views\Register.resx">
       <DependentUpon>Register.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SimpleStockMenu.resx">
+      <DependentUpon>SimpleStockMenu.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -157,6 +167,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="logo.ico" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\logo.ico" />
     <None Include="packages.config" />
     <None Include="Resources\wallpaper.ico" />
   </ItemGroup>
