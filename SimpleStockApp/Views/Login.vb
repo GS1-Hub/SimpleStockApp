@@ -19,4 +19,10 @@ Public Class Login
             MessageBox.Show("Username or Password incorret")
         End If
     End Sub
+
+    Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click
+        Dim register As New Register()
+        register.Show()
+        Me.Hide()
+    End Sub
 End Class
