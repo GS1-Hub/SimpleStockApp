@@ -2,7 +2,6 @@
     Private _userId As Integer
     Public Sub New(userId As Integer)
         InitializeComponent()
-        _userId = userId
     End Sub
 
     Private Sub SettingsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -42,10 +41,5 @@
             If ex.InnerException?.InnerException IsNot Nothing Then msg &= vbNewLine & ex.InnerException.InnerException.Message
             MessageBox.Show("Erro: " & msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-    End Sub
-
-    Private Sub SettingsForm_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
-        Dim dashboard = New Dashboard(_userId, True)
-        dashboard.Show()
     End Sub
 End Class

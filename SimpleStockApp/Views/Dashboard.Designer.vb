@@ -28,6 +28,7 @@ Partial Class Dashboard
         Me.Stock = New System.Windows.Forms.ToolStripMenuItem()
         Me.Clients = New System.Windows.Forms.ToolStripMenuItem()
         Me.Settings = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pnlContent = New System.Windows.Forms.Panel()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,26 +53,34 @@ Partial Class Dashboard
         'Stock
         '
         Me.Stock.Name = "Stock"
-        Me.Stock.Size = New System.Drawing.Size(180, 22)
+        Me.Stock.Size = New System.Drawing.Size(128, 22)
         Me.Stock.Text = "📦Stock"
         '
         'Clients
         '
         Me.Clients.Name = "Clients"
-        Me.Clients.Size = New System.Drawing.Size(180, 22)
+        Me.Clients.Size = New System.Drawing.Size(128, 22)
         Me.Clients.Text = "👤Clients"
         '
         'Settings
         '
         Me.Settings.Name = "Settings"
-        Me.Settings.Size = New System.Drawing.Size(180, 22)
+        Me.Settings.Size = New System.Drawing.Size(128, 22)
         Me.Settings.Text = "⚙️Settings"
+        '
+        'pnlContent
+        '
+        Me.pnlContent.Location = New System.Drawing.Point(12, 27)
+        Me.pnlContent.Name = "pnlContent"
+        Me.pnlContent.Size = New System.Drawing.Size(776, 411)
+        Me.pnlContent.TabIndex = 1
         '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.pnlContent)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -89,4 +98,5 @@ Partial Class Dashboard
     Friend WithEvents Stock As ToolStripMenuItem
     Friend WithEvents Clients As ToolStripMenuItem
     Friend WithEvents Settings As ToolStripMenuItem
+    Friend WithEvents pnlContent As Panel
 End Class
