@@ -39,6 +39,7 @@ Partial Class Login
         Me.username.Name = "username"
         Me.username.Size = New System.Drawing.Size(115, 20)
         Me.username.TabIndex = 0
+        Me.username.Text = "admin"
         '
         'Label1
         '
@@ -66,6 +67,7 @@ Partial Class Login
         Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.password.Size = New System.Drawing.Size(115, 20)
         Me.password.TabIndex = 2
+        Me.password.Text = "admin1"
         '
         'PictureBox1
         '
