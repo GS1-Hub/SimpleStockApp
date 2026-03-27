@@ -25,4 +25,28 @@ Public Class AuthService
         dc1.SaveChanges()
         Return True
     End Function
+
+    Public Shared Function RegisterEmployer(emp As Employers) As Boolean
+        Dim db As New AppDbContext()
+
+        Dim existing = db.Employers.FirstOrDefault(Function(e) e.Username = emp.Username)
+        If existing IsNot Nothing Then
+            db.Dispose()
+            Return False
+        End If
+
+        db.Employers.Add(New Employers() With {
+        .Name = emp.Name,
+        .Email = emp.Email,
+        .DepartmentId = emp.DepartmentId,
+        .Username = emp.Username,
+        .Password = HashPassword(emp.Password)
+        })
+        db.SaveChanges()
+        db.Dispose()
+        Return True
+    End Function
+    Public Shared Function VerifyPassword(password As String, hashedPassword As String) As Boolean
+        Return HashPassword(password) = hashedPassword
+    End Function
 End Class

@@ -17,22 +17,28 @@ Public Class Login
                 Dim db As New AppDbContext()
                 Dim company = db.Companies.FirstOrDefault(Function(c) c.ClientId = user.Id)
                 db.Dispose()
-
                 If company Is Nothing Then
                     Dim companyForm As New CompanyForm(user.Id)
                     companyForm.ShowDialog()
                 End If
-
-                Dim dashboard As New Dashboard()
+                Dim dashboard As New Dashboard(user.Id, True)
                 dashboard.Show()
             Else
-                Dim dashboard As New Dashboard()
-                dashboard.Show()
+                MessageBox.Show("Conta sem permissões!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
-
             Me.Hide()
         Else
-            MessageBox.Show("Username ou Password incorretos!")
+            Dim db As New AppDbContext()
+            Dim empResult = db.Employers.FirstOrDefault(Function(x) x.Username = username.Text)
+            db.Dispose()
+
+            If empResult IsNot Nothing AndAlso AuthService.VerifyPassword(password.Text, empResult.Password) Then
+                Dim dashboard As New Dashboard(empResult.Id, False)
+                dashboard.Show()
+                Me.Hide()
+            Else
+                MessageBox.Show("Username ou Password incorretos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
         End If
     End Sub
 
