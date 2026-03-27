@@ -92,6 +92,8 @@
   <ItemGroup>
     <Compile Include="DataBase\AppDbContext.vb" />
     <Compile Include="Models\Company.vb" />
+    <Compile Include="Models\Departament.vb" />
+    <Compile Include="Models\Employers.vb" />
     <Compile Include="Models\User.vb" />
     <Compile Include="Services\AuthService.vb" />
     <Compile Include="Views\CompanyForm.Designer.vb">
@@ -134,6 +136,12 @@
     <Compile Include="Views\Register.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\SettingsForm.Designer.vb">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\StockForm.Designer.vb">
       <DependentUpon>StockForm.vb</DependentUpon>
     </Compile>
@@ -159,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Register.resx">
       <DependentUpon>Register.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SettingsForm.resx">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StockForm.resx">
       <DependentUpon>StockForm.vb</DependentUpon>

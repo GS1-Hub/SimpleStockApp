@@ -1,11 +1,14 @@
-﻿Imports Microsoft.VisualBasic.ApplicationServices
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class CompanyForm
     Private _userId As Integer
+
     Public Sub New(userId As Integer)
         InitializeComponent()
         _userId = userId
     End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If String.IsNullOrWhiteSpace(txtName.Text) OrElse String.IsNullOrWhiteSpace(txtNIF.Text) Then
             MessageBox.Show("Nome e NIF são obrigatórios!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -28,18 +31,16 @@ Public Class CompanyForm
             company.NIF = txtNIF.Text.Trim()
             company.Email = txtEmail.Text.Trim()
             company.Phone = txtPhone.Text.Trim()
-            company.Employers = ""
 
             db.Companies.Add(company)
             db.SaveChanges()
             db.Dispose()
 
-            MessageBox.Show("Sucess!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
 
         Catch ex As Exception
             MessageBox.Show("Erro: " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
 End Class
