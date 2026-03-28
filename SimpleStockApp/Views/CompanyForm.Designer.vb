@@ -24,21 +24,25 @@ Partial Class CompanyForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CompanyForm))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtNIF = New System.Windows.Forms.TextBox()
-        Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.txtPhone = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtNIF = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.CbTypeB = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CbTypeB)
+        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
@@ -56,53 +60,23 @@ Partial Class CompanyForm
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Company Form"
         '
-        'txtName
+        'Button2
         '
-        Me.txtName.Location = New System.Drawing.Point(47, 22)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(131, 20)
-        Me.txtName.TabIndex = 0
+        Me.Button2.Location = New System.Drawing.Point(370, 114)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Cancel"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'Label1
+        'Button1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 25)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Name"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(284, 25)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(24, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "NIF"
-        '
-        'txtNIF
-        '
-        Me.txtNIF.Location = New System.Drawing.Point(314, 22)
-        Me.txtNIF.Name = "txtNIF"
-        Me.txtNIF.Size = New System.Drawing.Size(131, 20)
-        Me.txtNIF.TabIndex = 3
-        '
-        'txtEmail
-        '
-        Me.txtEmail.Location = New System.Drawing.Point(47, 48)
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(131, 20)
-        Me.txtEmail.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 52)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(32, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Email"
+        Me.Button1.Location = New System.Drawing.Point(287, 114)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Save"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -120,23 +94,70 @@ Partial Class CompanyForm
         Me.txtPhone.TabIndex = 6
         Me.txtPhone.Text = "Phone"
         '
-        'Button1
+        'txtEmail
         '
-        Me.Button1.Location = New System.Drawing.Point(287, 114)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Save"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.txtEmail.Location = New System.Drawing.Point(47, 48)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(131, 20)
+        Me.txtEmail.TabIndex = 5
         '
-        'Button2
+        'Label3
         '
-        Me.Button2.Location = New System.Drawing.Point(370, 114)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Cancel"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 52)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(32, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Email"
+        '
+        'txtNIF
+        '
+        Me.txtNIF.Location = New System.Drawing.Point(314, 22)
+        Me.txtNIF.Name = "txtNIF"
+        Me.txtNIF.Size = New System.Drawing.Size(131, 20)
+        Me.txtNIF.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(284, 25)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(24, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "NIF"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 25)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(35, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Name"
+        '
+        'txtName
+        '
+        Me.txtName.Location = New System.Drawing.Point(47, 22)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(131, 20)
+        Me.txtName.TabIndex = 0
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 80)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(96, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Type of Bussiness:"
+        '
+        'CbTypeB
+        '
+        Me.CbTypeB.FormattingEnabled = True
+        Me.CbTypeB.Location = New System.Drawing.Point(9, 96)
+        Me.CbTypeB.Name = "CbTypeB"
+        Me.CbTypeB.Size = New System.Drawing.Size(121, 21)
+        Me.CbTypeB.TabIndex = 11
         '
         'CompanyForm
         '
@@ -164,4 +185,6 @@ Partial Class CompanyForm
     Friend WithEvents txtPhone As Label
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents CbTypeB As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

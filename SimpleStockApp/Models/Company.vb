@@ -8,5 +8,6 @@ Public Class Company
     Public Property NIF As String
     Public Property Email As String
     Public Property Phone As String
+    Public Property BusinessType As BusinessType
 
 End Class

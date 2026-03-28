@@ -31,7 +31,7 @@ Public Class CompanyForm
             company.NIF = txtNIF.Text.Trim()
             company.Email = txtEmail.Text.Trim()
             company.Phone = txtPhone.Text.Trim()
-
+            company.BusinessType = CType(CbTypeB.SelectedItem, BusinessType)
             db.Companies.Add(company)
             db.SaveChanges()
             db.Dispose()
@@ -42,5 +42,9 @@ Public Class CompanyForm
         Catch ex As Exception
             MessageBox.Show("Erro: " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub CompanyForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CbTypeB.DataSource = [Enum].GetValues(GetType(BusinessType))
     End Sub
 End Class
