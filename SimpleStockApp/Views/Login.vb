@@ -12,33 +12,19 @@ Public Class Login
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim user = AuthService.Login(username.Text, password.Text)
-        If user IsNot Nothing Then
-            If user.IsClient Then
-                Dim db As New AppDbContext()
-                Dim company = db.Companies.FirstOrDefault(Function(c) c.ClientId = user.Id)
-                db.Dispose()
-                If company Is Nothing Then
-                    Dim companyForm As New CompanyForm(user.Id)
-                    companyForm.ShowDialog()
-                End If
-                Dim dashboard As New Dashboard(user.Id, True)
-                dashboard.Show()
-            Else
-                MessageBox.Show("Conta sem permissões!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If user.IsClient OrElse user.IsAdmin Then
+            Dim db As New AppDbContext()
+            Dim company = db.Companies.FirstOrDefault(Function(c) c.ClientId = user.Id)
+            db.Dispose()
+            If company Is Nothing AndAlso user.IsClient Then
+                Dim companyForm As New CompanyForm(user.Id)
+                companyForm.ShowDialog()
             End If
+            Dim dashboard As New Dashboard(user.Id, True)
+            dashboard.Show()
             Me.Hide()
         Else
-            Dim db As New AppDbContext()
-            Dim empResult = db.Employers.FirstOrDefault(Function(x) x.Username = username.Text)
-            db.Dispose()
-
-            If empResult IsNot Nothing AndAlso AuthService.VerifyPassword(password.Text, empResult.Password) Then
-                Dim dashboard As New Dashboard(empResult.Id, False)
-                dashboard.Show()
-                Me.Hide()
-            Else
-                MessageBox.Show("Username ou Password incorretos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            End If
+            MessageBox.Show("Conta sem permissões!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 

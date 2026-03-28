@@ -1,6 +1,6 @@
 ﻿Imports System.ComponentModel.DataAnnotations.Schema
 
-<Table("Company")>
+<Table("Companies")>
 Public Class Company
     Public Property Id As Integer
     Public Property ClientId As Integer
