@@ -10,6 +10,21 @@
         Catch ex As Exception
             MessageBox.Show("Erro: " & ex.Message)
         End Try
+
+        Dim db3 As New AppDbContext()
+        Dim totalUsers = db3.Users.Count()
+        Dim totalAdmins = db3.Users.Count(Function(u) u.IsAdmin)
+        Dim totalCompanies = db3.Companies.Count()
+        db3.Dispose()
+
+        Chart1.Series.Clear()
+        Chart1.Series.Add("Stats")
+        Chart1.Titles.Add("SimpleStock Stats")
+        Chart1.Series("Stats").ChartType = DataVisualization.Charting.SeriesChartType.Column
+
+        Chart1.Series("Stats").Points.AddXY("Total Users", totalUsers)
+        Chart1.Series("Stats").Points.AddXY("Admins", totalAdmins)
+        Chart1.Series("Stats").Points.AddXY("Companies", totalCompanies)
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -35,9 +50,6 @@
         If user IsNot Nothing Then
             ForeverToggle1.Checked = user.IsAdmin
         End If
-    End Sub
-    Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click

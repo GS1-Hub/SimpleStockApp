@@ -22,6 +22,9 @@ Partial Class AdminDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminDashboard))
         Me.dtAdmin = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -29,8 +32,12 @@ Partial Class AdminDashboard
         Me.ForeverToggle1 = New ReaLTaiizor.Controls.ForeverToggle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnDeleteUser = New System.Windows.Forms.Button()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         CType(Me.dtAdmin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'dtAdmin
@@ -40,7 +47,7 @@ Partial Class AdminDashboard
         Me.dtAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtAdmin.Location = New System.Drawing.Point(12, 12)
         Me.dtAdmin.Name = "dtAdmin"
-        Me.dtAdmin.Size = New System.Drawing.Size(542, 529)
+        Me.dtAdmin.Size = New System.Drawing.Size(542, 715)
         Me.dtAdmin.TabIndex = 0
         '
         'GroupBox1
@@ -101,11 +108,43 @@ Partial Class AdminDashboard
         Me.btnDeleteUser.Text = "Delete User"
         Me.btnDeleteUser.UseVisualStyleBackColor = True
         '
+        'Chart1
+        '
+        Me.Chart1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Chart1.BackColor = System.Drawing.Color.Transparent
+        Me.Chart1.BorderlineColor = System.Drawing.Color.Transparent
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
+        Me.Chart1.Location = New System.Drawing.Point(6, 19)
+        Me.Chart1.Name = "Chart1"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
+        Me.Chart1.Size = New System.Drawing.Size(632, 350)
+        Me.Chart1.TabIndex = 2
+        Me.Chart1.Text = "Chart1"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.Chart1)
+        Me.GroupBox2.Location = New System.Drawing.Point(566, 141)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(703, 375)
+        Me.GroupBox2.TabIndex = 3
+        Me.GroupBox2.TabStop = False
+        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1069, 553)
+        Me.ClientSize = New System.Drawing.Size(1273, 739)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dtAdmin)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -114,6 +153,8 @@ Partial Class AdminDashboard
         CType(Me.dtAdmin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -124,4 +165,6 @@ Partial Class AdminDashboard
     Friend WithEvents Label1 As Label
     Friend WithEvents ForeverToggle1 As ReaLTaiizor.Controls.ForeverToggle
     Friend WithEvents btnSave As Button
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents GroupBox2 As GroupBox
 End Class
