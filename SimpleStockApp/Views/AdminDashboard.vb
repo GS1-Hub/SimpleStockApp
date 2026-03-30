@@ -39,4 +39,34 @@
     Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click
+        If dtAdmin.CurrentRow Is Nothing Then
+            MessageBox.Show("Plesea select a user!", "Alert!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        Dim user = TryCast(dtAdmin.CurrentRow.DataBoundItem, User)
+        If user IsNot Nothing Then
+            Dim confirm = MessageBox.Show("You want to delete this user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If confirm = DialogResult.Yes Then
+                Dim db As New AppDbContext()
+                Dim company = db.Companies.FirstOrDefault(Function(c) c.ClientId = user.Id)
+                If company IsNot Nothing Then
+                    db.Companies.Remove(company)
+                End If
+                Dim dbUser = db.Users.FirstOrDefault(Function(u) u.Id = user.Id)
+                db.Users.Remove(dbUser)
+                db.SaveChanges()
+                db.Dispose()
+                MessageBox.Show("~User deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                dtAdmin.DataSource = Nothing
+                Dim db2 As New AppDbContext()
+                dtAdmin.DataSource = db2.Users.ToList()
+                db2.Dispose()
+                dtAdmin.Columns("Id").Visible = False
+                dtAdmin.Columns("Password").Visible = False
+            End If
+        End If
+    End Sub
 End Class
