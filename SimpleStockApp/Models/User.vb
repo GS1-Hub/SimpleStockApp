@@ -7,5 +7,6 @@ Public Class User
     Public Property Password As String
     Public Property Email As String
     Public Property IsClient As Boolean
+    Public Property IsOwner As Boolean
     Public Property IsAdmin As Boolean
 End Class

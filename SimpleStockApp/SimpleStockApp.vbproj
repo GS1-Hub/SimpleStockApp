@@ -111,6 +111,12 @@
     <Compile Include="Models\Employers.vb" />
     <Compile Include="Models\User.vb" />
     <Compile Include="Services\AuthService.vb" />
+    <Compile Include="Views\AdminDashboard.Designer.vb">
+      <DependentUpon>AdminDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\AdminstratorForm.Designer.vb">
       <DependentUpon>AdminstratorForm.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Views\OwnerDashboard.Designer.vb">
+      <DependentUpon>OwnerDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OwnerDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Register.Designer.vb">
       <DependentUpon>Register.vb</DependentUpon>
     </Compile>
@@ -177,6 +189,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminstratorForm.resx">
       <DependentUpon>AdminstratorForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +209,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OwnerDashboard.resx">
+      <DependentUpon>OwnerDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Register.resx">
       <DependentUpon>Register.vb</DependentUpon>

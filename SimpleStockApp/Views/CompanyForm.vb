@@ -34,10 +34,18 @@ Public Class CompanyForm
             company.BusinessType = CType(CbTypeB.SelectedItem, BusinessType)
             db.Companies.Add(company)
             db.SaveChanges()
+
+            Dim user = db.Users.FirstOrDefault(Function(u) u.Id = _userId)
+            If user IsNot Nothing Then
+                user.IsOwner = True
+                db.SaveChanges()
+            End If
+
             db.Dispose()
 
             MessageBox.Show("Sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
+
 
         Catch ex As Exception
             MessageBox.Show("Erro: " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
