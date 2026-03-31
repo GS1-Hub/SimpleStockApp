@@ -5,8 +5,8 @@ Public Class Produtcs
 
     Public Property Id As Integer
     Public Property Name As String
-    Public Property Price As Integer
-    Public Property Descont As Integer
+    Public Property Price As Decimal
+    Public Property Descont As Decimal
     Public Property Stock As Integer
     Public Property Company_Id As Integer
 

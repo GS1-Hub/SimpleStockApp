@@ -24,13 +24,13 @@ Partial Class StockForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StockForm))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtPrice = New System.Windows.Forms.TextBox()
-        Me.txtDescont = New System.Windows.Forms.TextBox()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.txtDescont = New System.Windows.Forms.TextBox()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgProducts = New System.Windows.Forms.DataGridView()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.GroupBox1.SuspendLayout()
@@ -53,23 +53,35 @@ Partial Class StockForm
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Products"
         '
-        'Label1
+        'btnSave
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 23)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Name:"
+        Me.btnSave.Location = New System.Drawing.Point(9, 133)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(205, 23)
+        Me.btnSave.TabIndex = 6
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
-        'Label2
+        'txtDescont
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 56)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(34, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Price:"
+        Me.txtDescont.Location = New System.Drawing.Point(64, 86)
+        Me.txtDescont.Name = "txtDescont"
+        Me.txtDescont.Size = New System.Drawing.Size(150, 20)
+        Me.txtDescont.TabIndex = 5
+        '
+        'txtPrice
+        '
+        Me.txtPrice.Location = New System.Drawing.Point(64, 49)
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(150, 20)
+        Me.txtPrice.TabIndex = 4
+        '
+        'txtName
+        '
+        Me.txtName.Location = New System.Drawing.Point(64, 16)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(150, 20)
+        Me.txtName.TabIndex = 3
         '
         'Label3
         '
@@ -80,35 +92,23 @@ Partial Class StockForm
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Descont:"
         '
-        'txtName
+        'Label2
         '
-        Me.txtName.Location = New System.Drawing.Point(64, 16)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(150, 20)
-        Me.txtName.TabIndex = 3
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 56)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(34, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Price:"
         '
-        'txtPrice
+        'Label1
         '
-        Me.txtPrice.Location = New System.Drawing.Point(64, 49)
-        Me.txtPrice.Name = "txtPrice"
-        Me.txtPrice.Size = New System.Drawing.Size(150, 20)
-        Me.txtPrice.TabIndex = 4
-        '
-        'txtDescont
-        '
-        Me.txtDescont.Location = New System.Drawing.Point(64, 86)
-        Me.txtDescont.Name = "txtDescont"
-        Me.txtDescont.Size = New System.Drawing.Size(150, 20)
-        Me.txtDescont.TabIndex = 5
-        '
-        'btnSave
-        '
-        Me.btnSave.Location = New System.Drawing.Point(9, 133)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(205, 23)
-        Me.btnSave.TabIndex = 6
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 23)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Name:"
         '
         'dgProducts
         '

@@ -36,4 +36,16 @@
         End Try
 
     End Sub
+
+    Private Sub StockForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim db As New AppDbContext()
+            Dim produtcs = db.Produtcs.ToList()
+            db.Dispose()
+            dgProducts.DataSource = produtcs
+            dgProducts.Columns("Id").Visible = False
+        Catch ex As Exception
+            MessageBox.Show("Erro: " & ex.Message)
+        End Try
+    End Sub
 End Class
