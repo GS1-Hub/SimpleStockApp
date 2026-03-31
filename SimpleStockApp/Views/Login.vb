@@ -25,7 +25,7 @@ Public Class Login
                 Dim companyForm As New CompanyForm(user.Id)
                 companyForm.ShowDialog()
             End If
-            Dim dashboard As New Dashboard(user.Id, user.IsOwner, user.IsAdmin)
+            Dim dashboard As New Dashboard(user.Id, user.IsOwner, user.IsAdmin, user.CompanyId)
             dashboard.Show()
             Me.Close()
         Else

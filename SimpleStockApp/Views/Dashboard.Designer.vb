@@ -29,6 +29,7 @@ Partial Class Dashboard
         Me.Clients = New System.Windows.Forms.ToolStripMenuItem()
         Me.Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlContent = New System.Windows.Forms.Panel()
+        Me.AdminSettings = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -44,7 +45,7 @@ Partial Class Dashboard
         '
         'CompanyToolStripMenuItem
         '
-        Me.CompanyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Stock, Me.Clients, Me.Settings})
+        Me.CompanyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Stock, Me.Clients, Me.Settings, Me.AdminSettings})
         Me.CompanyToolStripMenuItem.Image = Global.SimpleStockApp.My.Resources.Resources.logo
         Me.CompanyToolStripMenuItem.Name = "CompanyToolStripMenuItem"
         Me.CompanyToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -53,19 +54,19 @@ Partial Class Dashboard
         'Stock
         '
         Me.Stock.Name = "Stock"
-        Me.Stock.Size = New System.Drawing.Size(128, 22)
+        Me.Stock.Size = New System.Drawing.Size(180, 22)
         Me.Stock.Text = "📦Stock"
         '
         'Clients
         '
         Me.Clients.Name = "Clients"
-        Me.Clients.Size = New System.Drawing.Size(128, 22)
+        Me.Clients.Size = New System.Drawing.Size(180, 22)
         Me.Clients.Text = "👤Clients"
         '
         'Settings
         '
         Me.Settings.Name = "Settings"
-        Me.Settings.Size = New System.Drawing.Size(128, 22)
+        Me.Settings.Size = New System.Drawing.Size(180, 22)
         Me.Settings.Text = "⚙️Settings"
         '
         'pnlContent
@@ -77,6 +78,12 @@ Partial Class Dashboard
         Me.pnlContent.Name = "pnlContent"
         Me.pnlContent.Size = New System.Drawing.Size(1160, 622)
         Me.pnlContent.TabIndex = 1
+        '
+        'AdminSettings
+        '
+        Me.AdminSettings.Name = "AdminSettings"
+        Me.AdminSettings.Size = New System.Drawing.Size(180, 22)
+        Me.AdminSettings.Text = "Settings"
         '
         'Dashboard
         '
@@ -103,4 +110,5 @@ Partial Class Dashboard
     Friend WithEvents Clients As ToolStripMenuItem
     Friend WithEvents Settings As ToolStripMenuItem
     Friend WithEvents pnlContent As Panel
+    Friend WithEvents AdminSettings As ToolStripMenuItem
 End Class

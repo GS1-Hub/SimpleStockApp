@@ -17,8 +17,9 @@ Public Class Register
             .Username = txtUsername.Text,
             .Password = txtPasword.Text,
             .Email = txtEmail.Text,
-            .isClient = True
+            .IsClient = True
         }
+
 
         If AuthService.Register(user) Then
             MessageBox.Show("Success!")

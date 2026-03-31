@@ -9,4 +9,5 @@ Public Class User
     Public Property IsClient As Boolean
     Public Property IsOwner As Boolean
     Public Property IsAdmin As Boolean
+    Public Property CompanyId As Integer?
 End Class

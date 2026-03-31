@@ -2,15 +2,18 @@
     Private _userId As Integer
     Private _isOwner As Boolean
     Private _isAdmin As Boolean
-    Public Sub New(userId As Integer, isOwner As Boolean, isAdmin As Boolean)
+    Private _companyId As Integer?
+    Public Sub New(userId As Integer, isOwner As Boolean, isAdmin As Boolean, companyId As Integer?)
         InitializeComponent()
         _userId = userId
         _isOwner = isOwner
         _isAdmin = isAdmin
+        _companyId = companyId
     End Sub
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If _isAdmin = True Then
+            AdminSettings.Visible = _isAdmin
             LoadForm(New AdminDashboard())
         ElseIf _isOwner = True Then
             Settings.Visible = _isOwner
@@ -38,5 +41,9 @@
     End Sub
     Private Sub Dashboard_Closed(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Application.Exit()
+    End Sub
+
+    Private Sub AdminSettings_Click(sender As Object, e As EventArgs) Handles AdminSettings.Click
+        LoadForm(New AdminDashboard())
     End Sub
 End Class

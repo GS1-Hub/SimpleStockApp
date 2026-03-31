@@ -17,7 +17,6 @@ Public Class CompanyForm
 
         Try
             Dim db As New AppDbContext()
-
             Dim existing = db.Companies.FirstOrDefault(Function(c) c.ClientId = _userId)
             If existing IsNot Nothing Then
                 MessageBox.Show("Já tens uma empresa criada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -25,6 +24,7 @@ Public Class CompanyForm
                 Return
             End If
 
+            Dim user = db.Users.FirstOrDefault(Function(u) u.Id = _userId)
             Dim company As New Company()
             company.ClientId = _userId
             company.Name = txtName.Text.Trim()
@@ -32,23 +32,21 @@ Public Class CompanyForm
             company.Email = txtEmail.Text.Trim()
             company.Phone = txtPhone.Text.Trim()
             company.BusinessType = CType(CbTypeB.SelectedItem, BusinessType)
+
             db.Companies.Add(company)
             db.SaveChanges()
 
-            Dim user = db.Users.FirstOrDefault(Function(u) u.Id = _userId)
             If user IsNot Nothing Then
+                user.CompanyId = company.Id
                 user.IsOwner = True
                 db.SaveChanges()
             End If
 
             db.Dispose()
-
             MessageBox.Show("Sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
-
-
         Catch ex As Exception
-            MessageBox.Show("Erro: " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("ERRO:" + ex.Message)
         End Try
     End Sub
 
