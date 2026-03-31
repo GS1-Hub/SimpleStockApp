@@ -1,4 +1,6 @@
-﻿Public Class Dashboard
+﻿Imports System.ComponentModel.Design
+
+Public Class Dashboard
     Private _userId As Integer
     Private _isOwner As Boolean
     Private _isAdmin As Boolean
@@ -17,7 +19,7 @@
             LoadForm(New AdminDashboard())
         ElseIf _isOwner = True Then
             Settings.Visible = _isOwner
-            LoadForm(New StockForm())
+            LoadForm(New StockForm(_companyId))
         Else
             LoadForm(New Register())
         End If
@@ -33,7 +35,7 @@
     End Sub
 
     Private Sub Stock_Click(sender As Object, e As EventArgs) Handles Stock.Click
-        LoadForm(New StockForm())
+        LoadForm(New StockForm(_companyId))
     End Sub
 
     Private Sub Settings_Click(sender As Object, e As EventArgs) Handles Settings.Click

@@ -159,6 +159,7 @@
     <Compile Include="Models\Company.vb" />
     <Compile Include="Models\Departament.vb" />
     <Compile Include="Models\Employers.vb" />
+    <Compile Include="Models\Produtcs.vb" />
     <Compile Include="Models\User.vb" />
     <Compile Include="Services\AuthService.vb" />
     <Compile Include="Views\AdminDashboard.Designer.vb">

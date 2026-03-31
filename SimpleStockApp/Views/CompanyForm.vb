@@ -11,7 +11,7 @@ Public Class CompanyForm
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If String.IsNullOrWhiteSpace(txtName.Text) OrElse String.IsNullOrWhiteSpace(txtNIF.Text) Then
-            MessageBox.Show("Nome e NIF são obrigatórios!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Put Name and NIF!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
