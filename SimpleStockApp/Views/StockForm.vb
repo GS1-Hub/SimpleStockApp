@@ -38,14 +38,38 @@
     End Sub
 
     Private Sub StockForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadGrid()
+    End Sub
+
+    Private Sub btnStock_Click(sender As Object, e As EventArgs) Handles btnStock.Click
         Try
-            Dim db As New AppDbContext()
-            Dim produtcs = db.Produtcs.ToList()
-            db.Dispose()
-            dgProducts.DataSource = produtcs
-            dgProducts.Columns("Id").Visible = False
+            If dgProducts.SelectedRows.Count = 0 Then
+                MessageBox.Show("Select a product to add a Stock")
+                Return
+            End If
+
+            Dim dc As New AppDbContext()
+            Dim selectedRow = dgProducts.SelectedRows(0)
+            Dim productId = CInt(selectedRow.Cells("Id").Value)
+            Dim stockNr = CInt(nUpDown.Value)
+
+            Dim product = dc.Produtcs.FirstOrDefault(Function(p) p.Id = productId)
+            If product IsNot Nothing Then
+                product.Stock += stockNr
+                dc.SaveChanges()
+                MessageBox.Show("Stock updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+            LoadGrid()
+            dc.Dispose()
         Catch ex As Exception
-            MessageBox.Show("Erro: " & ex.Message)
+
         End Try
+    End Sub
+    Private Sub LoadGrid()
+        Dim dc As New AppDbContext()
+        Dim produtcs = dc.Produtcs.ToList()
+        dc.Dispose()
+        dgProducts.DataSource = produtcs
+        dgProducts.Columns("Id").Visible = False
     End Sub
 End Class
