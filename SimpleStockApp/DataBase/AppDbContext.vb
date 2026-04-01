@@ -11,4 +11,5 @@ Public Class AppDbContext
     Public Property Companies As DbSet(Of Company)
     Public Property Employers As DbSet(Of Employers)
     Public Property Produtcs As DbSet(Of Produtcs)
+    Public Property Sales As DbSet(Of Sale)
 End Class
