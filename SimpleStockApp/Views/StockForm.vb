@@ -42,6 +42,7 @@ Public Class StockForm
     End Sub
 
     Private Sub StockForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dgProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         LoadGrid()
     End Sub
 
@@ -111,5 +112,9 @@ Public Class StockForm
             editDesc.Text = selectRow.Cells("Descont").Value?.ToString()
             editUpDown.Value = selectRow.Cells("Stock").Value?.ToString()
         End If
+    End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+
     End Sub
 End Class

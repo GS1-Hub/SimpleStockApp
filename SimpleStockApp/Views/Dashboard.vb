@@ -48,4 +48,8 @@ Public Class Dashboard
     Private Sub AdminSettings_Click(sender As Object, e As EventArgs) Handles AdminSettings.Click
         LoadForm(New AdminDashboard())
     End Sub
+
+    Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EXITToolStripMenuItem.Click
+        Me.Close()
+    End Sub
 End Class

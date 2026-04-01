@@ -28,8 +28,9 @@ Partial Class Dashboard
         Me.Stock = New System.Windows.Forms.ToolStripMenuItem()
         Me.Clients = New System.Windows.Forms.ToolStripMenuItem()
         Me.Settings = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pnlContent = New System.Windows.Forms.Panel()
         Me.AdminSettings = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pnlContent = New System.Windows.Forms.Panel()
+        Me.EXITToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,7 +46,7 @@ Partial Class Dashboard
         '
         'CompanyToolStripMenuItem
         '
-        Me.CompanyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Stock, Me.Clients, Me.Settings, Me.AdminSettings})
+        Me.CompanyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Stock, Me.Clients, Me.Settings, Me.AdminSettings, Me.EXITToolStripMenuItem})
         Me.CompanyToolStripMenuItem.Image = Global.SimpleStockApp.My.Resources.Resources.logo
         Me.CompanyToolStripMenuItem.Name = "CompanyToolStripMenuItem"
         Me.CompanyToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -69,6 +70,12 @@ Partial Class Dashboard
         Me.Settings.Size = New System.Drawing.Size(180, 22)
         Me.Settings.Text = "⚙️Settings"
         '
+        'AdminSettings
+        '
+        Me.AdminSettings.Name = "AdminSettings"
+        Me.AdminSettings.Size = New System.Drawing.Size(180, 22)
+        Me.AdminSettings.Text = "Settings"
+        '
         'pnlContent
         '
         Me.pnlContent.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -79,11 +86,11 @@ Partial Class Dashboard
         Me.pnlContent.Size = New System.Drawing.Size(1160, 622)
         Me.pnlContent.TabIndex = 1
         '
-        'AdminSettings
+        'EXITToolStripMenuItem
         '
-        Me.AdminSettings.Name = "AdminSettings"
-        Me.AdminSettings.Size = New System.Drawing.Size(180, 22)
-        Me.AdminSettings.Text = "Settings"
+        Me.EXITToolStripMenuItem.Name = "EXITToolStripMenuItem"
+        Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EXITToolStripMenuItem.Text = "EXIT"
         '
         'Dashboard
         '
@@ -111,4 +118,5 @@ Partial Class Dashboard
     Friend WithEvents Settings As ToolStripMenuItem
     Friend WithEvents pnlContent As Panel
     Friend WithEvents AdminSettings As ToolStripMenuItem
+    Friend WithEvents EXITToolStripMenuItem As ToolStripMenuItem
 End Class

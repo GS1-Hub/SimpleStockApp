@@ -238,6 +238,18 @@
     <Compile Include="Views\StockForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\ViewCompany.Designer.vb">
+      <DependentUpon>ViewCompany.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCompany.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewProductsForm.Designer.vb">
+      <DependentUpon>ViewProductsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewProductsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\AdminDashboard.resx">
@@ -275,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StockForm.resx">
       <DependentUpon>StockForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewCompany.resx">
+      <DependentUpon>ViewCompany.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewProductsForm.resx">
+      <DependentUpon>ViewProductsForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
