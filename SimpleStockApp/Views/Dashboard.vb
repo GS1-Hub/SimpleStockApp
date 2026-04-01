@@ -52,4 +52,8 @@ Public Class Dashboard
     Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EXITToolStripMenuItem.Click
         Me.Close()
     End Sub
+
+    Private Sub CompanysToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CompanysToolStripMenuItem.Click
+        LoadForm(New ViewCompany())
+    End Sub
 End Class

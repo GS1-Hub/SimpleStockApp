@@ -1,6 +1,6 @@
 ﻿Public Class ViewCompany
     Private Sub ViewCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        LoadCompanys()
     End Sub
 
     Private Sub LoadCompanys()
