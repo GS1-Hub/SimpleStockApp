@@ -34,25 +34,25 @@ Partial Class StockForm
         Me.dgProducts = New System.Windows.Forms.DataGridView()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.nUpDown = New System.Windows.Forms.NumericUpDown()
         Me.btnStock = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.nUpDown = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.editUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.editDesc = New System.Windows.Forms.TextBox()
+        Me.editPrice = New System.Windows.Forms.TextBox()
+        Me.editName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.nUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.editUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -156,6 +156,13 @@ Partial Class StockForm
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Stock"
         '
+        'nUpDown
+        '
+        Me.nUpDown.Location = New System.Drawing.Point(50, 19)
+        Me.nUpDown.Name = "nUpDown"
+        Me.nUpDown.Size = New System.Drawing.Size(164, 20)
+        Me.nUpDown.TabIndex = 7
+        '
         'btnStock
         '
         Me.btnStock.Location = New System.Drawing.Point(9, 42)
@@ -174,21 +181,14 @@ Partial Class StockForm
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Stock:"
         '
-        'nUpDown
-        '
-        Me.nUpDown.Location = New System.Drawing.Point(50, 19)
-        Me.nUpDown.Name = "nUpDown"
-        Me.nUpDown.Size = New System.Drawing.Size(164, 20)
-        Me.nUpDown.TabIndex = 7
-        '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox3.Controls.Add(Me.editUpDown)
         Me.GroupBox3.Controls.Add(Me.Label8)
-        Me.GroupBox3.Controls.Add(Me.Button1)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
-        Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Controls.Add(Me.TextBox3)
+        Me.GroupBox3.Controls.Add(Me.btnEdit)
+        Me.GroupBox3.Controls.Add(Me.editDesc)
+        Me.GroupBox3.Controls.Add(Me.editPrice)
+        Me.GroupBox3.Controls.Add(Me.editName)
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.Label7)
@@ -199,35 +199,51 @@ Partial Class StockForm
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Edit Product"
         '
-        'Button1
+        'editUpDown
         '
-        Me.Button1.Location = New System.Drawing.Point(9, 141)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(205, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Save"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.editUpDown.Location = New System.Drawing.Point(50, 115)
+        Me.editUpDown.Name = "editUpDown"
+        Me.editUpDown.Size = New System.Drawing.Size(164, 20)
+        Me.editUpDown.TabIndex = 8
         '
-        'TextBox1
+        'Label8
         '
-        Me.TextBox1.Location = New System.Drawing.Point(64, 86)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(150, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 117)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(38, 13)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "Stock:"
         '
-        'TextBox2
+        'btnEdit
         '
-        Me.TextBox2.Location = New System.Drawing.Point(64, 49)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(150, 20)
-        Me.TextBox2.TabIndex = 4
+        Me.btnEdit.Location = New System.Drawing.Point(9, 141)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(205, 23)
+        Me.btnEdit.TabIndex = 6
+        Me.btnEdit.Text = "Save"
+        Me.btnEdit.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'editDesc
         '
-        Me.TextBox3.Location = New System.Drawing.Point(64, 16)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(150, 20)
-        Me.TextBox3.TabIndex = 3
+        Me.editDesc.Location = New System.Drawing.Point(64, 86)
+        Me.editDesc.Name = "editDesc"
+        Me.editDesc.Size = New System.Drawing.Size(150, 20)
+        Me.editDesc.TabIndex = 5
+        '
+        'editPrice
+        '
+        Me.editPrice.Location = New System.Drawing.Point(64, 49)
+        Me.editPrice.Name = "editPrice"
+        Me.editPrice.Size = New System.Drawing.Size(150, 20)
+        Me.editPrice.TabIndex = 4
+        '
+        'editName
+        '
+        Me.editName.Location = New System.Drawing.Point(64, 16)
+        Me.editName.Name = "editName"
+        Me.editName.Size = New System.Drawing.Size(150, 20)
+        Me.editName.TabIndex = 3
         '
         'Label4
         '
@@ -256,22 +272,6 @@ Partial Class StockForm
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Name:"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 117)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(38, 13)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Stock:"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(50, 115)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(164, 20)
-        Me.NumericUpDown1.TabIndex = 8
-        '
         'StockForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -292,7 +292,7 @@ Partial Class StockForm
         CType(Me.nUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.editUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -312,12 +312,12 @@ Partial Class StockForm
     Friend WithEvents btnStock As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents editUpDown As NumericUpDown
     Friend WithEvents Label8 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents btnEdit As Button
+    Friend WithEvents editDesc As TextBox
+    Friend WithEvents editPrice As TextBox
+    Friend WithEvents editName As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
