@@ -104,7 +104,7 @@ Public Class ViewProductsForm
         saveDialog.Title = "Save Recibe"
         saveDialog.Filter = "PDF (*.pdf)|*.pdf"
         saveDialog.FileName = $"Recibe_{DateTime.Now:yyyyMMdd_HHmmss}"
-        If saveDialog.ShowDialog() <> DialogResult.OK Then Return
+        If saveDialog.ShowDialog(Me) <> DialogResult.OK Then Return
 
         Dim doc As New iDocument(iPageSize.A4, 40, 40, 40, 40)
         PdfWriter.GetInstance(doc, New FileStream(saveDialog.FileName, FileMode.Create))

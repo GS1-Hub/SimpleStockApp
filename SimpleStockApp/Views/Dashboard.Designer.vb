@@ -26,12 +26,11 @@ Partial Class Dashboard
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Stock = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Clients = New System.Windows.Forms.ToolStripMenuItem()
         Me.Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminSettings = New System.Windows.Forms.ToolStripMenuItem()
         Me.EXITToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pnlContent = New System.Windows.Forms.Panel()
         Me.CompanysToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pnlContent = New System.Windows.Forms.Panel()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,7 +46,7 @@ Partial Class Dashboard
         '
         'CompanyToolStripMenuItem
         '
-        Me.CompanyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Stock, Me.Clients, Me.Settings, Me.AdminSettings, Me.EXITToolStripMenuItem})
+        Me.CompanyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Stock, Me.Settings, Me.AdminSettings, Me.EXITToolStripMenuItem})
         Me.CompanyToolStripMenuItem.Image = Global.SimpleStockApp.My.Resources.Resources.logo
         Me.CompanyToolStripMenuItem.Name = "CompanyToolStripMenuItem"
         Me.CompanyToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -58,12 +57,6 @@ Partial Class Dashboard
         Me.Stock.Name = "Stock"
         Me.Stock.Size = New System.Drawing.Size(180, 22)
         Me.Stock.Text = "📦Stock"
-        '
-        'Clients
-        '
-        Me.Clients.Name = "Clients"
-        Me.Clients.Size = New System.Drawing.Size(180, 22)
-        Me.Clients.Text = "👤Clients"
         '
         'Settings
         '
@@ -83,6 +76,13 @@ Partial Class Dashboard
         Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EXITToolStripMenuItem.Text = "EXIT"
         '
+        'CompanysToolStripMenuItem
+        '
+        Me.CompanysToolStripMenuItem.Image = Global.SimpleStockApp.My.Resources.Resources.logo
+        Me.CompanysToolStripMenuItem.Name = "CompanysToolStripMenuItem"
+        Me.CompanysToolStripMenuItem.Size = New System.Drawing.Size(92, 20)
+        Me.CompanysToolStripMenuItem.Text = "Companys"
+        '
         'pnlContent
         '
         Me.pnlContent.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -92,13 +92,6 @@ Partial Class Dashboard
         Me.pnlContent.Name = "pnlContent"
         Me.pnlContent.Size = New System.Drawing.Size(1160, 622)
         Me.pnlContent.TabIndex = 1
-        '
-        'CompanysToolStripMenuItem
-        '
-        Me.CompanysToolStripMenuItem.Image = Global.SimpleStockApp.My.Resources.Resources.logo
-        Me.CompanysToolStripMenuItem.Name = "CompanysToolStripMenuItem"
-        Me.CompanysToolStripMenuItem.Size = New System.Drawing.Size(92, 20)
-        Me.CompanysToolStripMenuItem.Text = "Companys"
         '
         'Dashboard
         '
@@ -122,7 +115,6 @@ Partial Class Dashboard
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CompanyToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Stock As ToolStripMenuItem
-    Friend WithEvents Clients As ToolStripMenuItem
     Friend WithEvents Settings As ToolStripMenuItem
     Friend WithEvents pnlContent As Panel
     Friend WithEvents AdminSettings As ToolStripMenuItem

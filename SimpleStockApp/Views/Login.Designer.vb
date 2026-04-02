@@ -67,7 +67,7 @@ Partial Class Login
         Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.password.Size = New System.Drawing.Size(115, 20)
         Me.password.TabIndex = 2
-        Me.password.Text = "admin1"
+        Me.password.Text = "123"
         '
         'PictureBox1
         '
