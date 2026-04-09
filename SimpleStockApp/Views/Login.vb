@@ -15,9 +15,10 @@ Public Class Login
 
         If user Is Nothing Then
             MessageBox.Show("Username or password is wrong")
+            Return
         End If
 
-        If user.IsClient OrElse user.IsAdmin Then
+        If user.IsClient OrElse user.IsAdmin OrElse user.IsOwner Then
             Dim db As New AppDbContext()
             Dim company = db.Companies.FirstOrDefault(Function(c) c.ClientId = user.Id)
             db.Dispose()
