@@ -35,7 +35,11 @@ Public Class Dashboard
     End Sub
 
     Private Sub Stock_Click(sender As Object, e As EventArgs) Handles Stock.Click
-        LoadForm(New StockForm(_companyId))
+        If _companyId Is Nothing Then
+            MessageBox.Show("N tem uma empresa para aceder ao stock")
+        Else
+            LoadForm(New StockForm(_companyId))
+        End If
     End Sub
 
     Private Sub Settings_Click(sender As Object, e As EventArgs) Handles Settings.Click

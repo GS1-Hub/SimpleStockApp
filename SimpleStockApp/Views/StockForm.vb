@@ -4,9 +4,9 @@ Imports System.Windows
 Public Class StockForm
     Dim companyId As Integer?
     Dim selectedId As Integer = -1
-    Public Sub New(companyId As Integer)
+    Public Sub New(_companyId As Integer)
         InitializeComponent()
-        Me.companyId = companyId
+        Me.companyId = _companyId
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
