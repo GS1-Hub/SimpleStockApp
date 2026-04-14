@@ -1,5 +1,4 @@
 ﻿Imports System.Data.Entity
-
 Public Class AppDbContext
     Inherits DbContext
     Public Sub New()

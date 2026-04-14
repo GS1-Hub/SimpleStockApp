@@ -1,32 +1,27 @@
 ﻿Imports System.IO
+Imports iTextSharp.text.pdf
+Imports iBaseColor = iTextSharp.text.BaseColor
+Imports iChunk = iTextSharp.text.Chunk
+Imports iDocument = iTextSharp.text.Document
+Imports iElement = iTextSharp.text.Element
 Imports iFont = iTextSharp.text.Font
 Imports iImage = iTextSharp.text.Image
-Imports iDocument = iTextSharp.text.Document
-Imports iParagraph = iTextSharp.text.Paragraph
-Imports iChunk = iTextSharp.text.Chunk
-Imports iPhrase = iTextSharp.text.Phrase
-Imports iPdfPTable = iTextSharp.text.pdf.PdfPTable
-Imports iPdfPCell = iTextSharp.text.pdf.PdfPCell
-Imports iPageSize = iTextSharp.text.PageSize
-Imports iBaseColor = iTextSharp.text.BaseColor
-Imports iElement = iTextSharp.text.Element
 Imports iLineSeparator = iTextSharp.text.pdf.draw.LineSeparator
-Imports iTextSharp.text.pdf
+Imports iPageSize = iTextSharp.text.PageSize
+Imports iParagraph = iTextSharp.text.Paragraph
+Imports iPhrase = iTextSharp.text.Phrase
 Public Class ViewProductsForm
     Dim _companyId As Integer
     Dim _companyName As String
-
     Public Sub New(companyId As Integer, companyName As String)
         InitializeComponent()
         _companyId = companyId
         _companyName = companyName
     End Sub
-
     Private Sub ViewProductsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GroupBox1.Text = _companyName
         LoadGrid()
     End Sub
-
     Private Sub LoadGrid()
         Using dc As New AppDbContext
             Dim products = dc.Produtcs.Where(Function(c) c.Company_Id = _companyId).
@@ -40,7 +35,6 @@ Public Class ViewProductsForm
             dgvProducts.DataSource = products
         End Using
     End Sub
-
     Private Sub dgvProducts_SelectionChanged(sender As Object, e As EventArgs) Handles dgvProducts.SelectionChanged
         If dgvProducts.SelectedRows.Count = 0 Then Return
         Dim row = dgvProducts.SelectedRows(0)
@@ -49,7 +43,6 @@ Public Class ViewProductsForm
         Label8.Text = row.Cells("Descont").Value.ToString()
         Label9.Text = row.Cells("Stock").Value.ToString()
     End Sub
-
     Private Sub nudQuantity_ValueChanged(sender As Object, e As EventArgs) Handles nudQuantity.ValueChanged
         If dgvProducts.SelectedRows.Count = 0 Then Return
         Dim price As Decimal = Convert.ToDecimal(dgvProducts.SelectedRows(0).Cells("Price").Value)
@@ -58,7 +51,6 @@ Public Class ViewProductsForm
         Dim finalPrice As Decimal = price - (price * discount / 100)
         lblFinalPrice.Text = $"{finalPrice * quantity:C}"
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If dgvProducts.SelectedRows.Count = 0 Then
             MessageBox.Show("Select a product!")
@@ -90,8 +82,8 @@ Public Class ViewProductsForm
             product.Stock -= quantity
 
             Dim sale As New Sale With {
-                .productId = productId,
-                .quantity = quantity,
+                .ProductId = productId,
+                .Quantity = quantity,
                 .TotalPrice = total,
                 .SaleDate = DateTime.Now
             }
