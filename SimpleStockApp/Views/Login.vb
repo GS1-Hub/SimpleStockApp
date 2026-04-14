@@ -9,7 +9,6 @@ Public Class Login
         btnLogin.Left = (Me.ClientSize.Width - (btnLogin.Width + btnReg.Width + 10)) / 2
         btnReg.Left = btnLogin.Left + btnLogin.Width + 10
     End Sub
-
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim user = AuthService.Login(username.Text, password.Text)
 

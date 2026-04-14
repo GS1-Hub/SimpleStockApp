@@ -77,8 +77,13 @@ Public Class ViewProductsForm
             Return
         End If
 
+
         Dim finalPrice As Decimal = price - (price * discount / 100)
         Dim total As Decimal = finalPrice * quantity
+
+        If productName.Contains("V1") Then
+            total = total * 0.85
+        End If
 
         Using dc As New AppDbContext
             Dim product = dc.Produtcs.Find(productId)
@@ -97,7 +102,6 @@ Public Class ViewProductsForm
         GerarFaturaPDF(productName, price, discount, finalPrice, quantity, total)
         LoadGrid()
     End Sub
-
     Private Sub GerarFaturaPDF(productName As String, price As Decimal, discount As Decimal, finalPrice As Decimal, quantity As Integer, total As Decimal)
 
         Dim saveDialog As New SaveFileDialog()
