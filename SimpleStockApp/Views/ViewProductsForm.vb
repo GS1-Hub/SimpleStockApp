@@ -120,7 +120,7 @@ Public Class ViewProductsForm
         Dim fontBranco As New iFont(iFont.FontFamily.HELVETICA, 10, iFont.BOLD, iBaseColor.WHITE)
 
         ' Logo
-        Dim logoPath As String = Application.StartupPath & "\wallpaper.ico"
+        Dim logoPath As String = Application.StartupPath & "Resources\wallpaper.ico"
         If File.Exists(logoPath) Then
             Dim logo As iImage = iImage.GetInstance(logoPath)
             logo.ScaleToFit(80, 80)
